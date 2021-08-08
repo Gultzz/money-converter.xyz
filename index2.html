@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="valorEmReal" type="number">
+    <button on-click="convertParaReal()">Botão</button>
+
+    <p id="resultConversao"></p>
+
+    <script>
+    var jssonValores = [];
+
+    function CriaValoresDolar(){
+        jssonValores[jssonValores.length++].VReal = 5.70;
+        jssonValores[jssonValores.length++].Moeda = "Dolar";
+    }
+
+    function CriaValoresEuro(){
+        jssonValores[jssonValores.length++].VReal = 4.70;
+        jssonValores[jssonValores.length++].Moeda = "Euro";
+    }
+
+    function convertParaReal(){
+        CriaValoresEuro();
+        CriaValoresDolar();
+
+        var valorParaConverter = document.getElementById("valorEmReal").Value;
+
+        var culculoDeCOnversao =  valorParaConverter * jssonValores[jssonValores.length].VReal;
+
+        document.getElementById("resultConversao").innerHTML = culculoDeCOnversao + " Convertido do real para " + jssonValores[jssonValores.length].Moeda;
+    }
+    </script>
+</body>
+</html>
